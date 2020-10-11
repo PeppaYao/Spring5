@@ -45,3 +45,22 @@ applicationContext.xml
 - 构造器注入
 - set注入：bean对象的创建依赖于容器。bean对象中的所有属性，由容器来注入。
 - 拓展方式注入：p命名和c命名，使用前需要导入约束。
+### bean作用域
+- singleton: 始终只创建一个实例。默认模式。
+- prototype：每次获取的实例都是不同的。
+- request：只能在web开发中使用到。
+- session：只能在web开发中使用到。
+- application：只能在web开发中使用到。
+- websocket：只能在web开发中使用到。
+### bean自动装配
+- xml显示配置 
+- 在Java中显示配置
+- 隐式自动装配bean【重要】: 1.byname通过bean_id名。2.bytype通过类名。
+小结：
+- byname,需要保证所有bean的id唯一，并且这个bean需要和自动注入的属性的set方法的值一致。
+- bytype,需要保证所有bean的class唯一，并且这个bean需要和自动注入的属性的类型一致。
+### 使用注解实现自动装配
+jdk1.5支持注解，spring2.5支持注解。
+使用注解
+- 导入约束。`xmlns:context="http://www.springframework.org/schema/context"`
+- 配置注解的支持。`<context:annotation-config/>`
