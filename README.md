@@ -25,3 +25,23 @@
 
 ### xml配置
 所有xml中的对象，都会被创建，无论是否调用。
+在配置文件加载的时候，容器中管理的对象就已经初始化了。
+### spring配置
+- 别名
+```xml
+<alias name="user" alias="fasdfasdf"></alias>
+```
+- bean配置
+id：bean的唯一标识符，即对象名。 class:bean对象所对应的全限定名，包名+类名。 name：也是别名可以取多个 用逗号或者空格分开。 scope：作用域单例或者多例。
+- import
+用于团队开发使用，可以将多个配置文件，导入合并为一个。
+applicationContext.xml
+```xml
+<import resource="bean1.xml" />
+<import resource="bean2.xml" />
+<import resource="bean3.xml" />
+```
+### 依赖注入
+- 构造器注入
+- set注入：bean对象的创建依赖于容器。bean对象中的所有属性，由容器来注入。
+- 拓展方式注入

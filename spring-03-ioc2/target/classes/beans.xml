@@ -10,4 +10,5 @@
 <!--        3.通过参数名赋值-->
         <constructor-arg name="name" value="姚哥哥"></constructor-arg>
     </bean>
+    <alias name="user" alias="fasdfasdf"></alias>
 </beans>
