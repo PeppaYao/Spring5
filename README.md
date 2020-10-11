@@ -77,3 +77,24 @@ jdk1.5支持注解，spring2.5支持注解。
 @Autowired
 @Qualifier(value = "cat111")
 ```
+@Resource先按照名字查找，再按照类型查找，实在找不到了再报错。
+```java
+@Resource(name = "cat222")
+```
+@Resource和AutoWired的区别
+- 都可以用来自动装配，都可以放在属性字段上。
+- AutoWired通过bytype的方式实现，在byname，必须要求这个对象存在。【常用】
+- Resource默认通过byname的方式实现，如果找不到名字，则通过bytype实现。
+### 使用注解开发
+@Component(): 组件，放在类上，说明这个类被Spring管理了，就是bean。Component有几个衍生注解。
+- @Service业务层
+- @Controller控制层
+- @Repository持久层DAO
+
+@Value("姚军"): 属性上值的注入。
+
+@Scope("singleton")：作用域
+小结：
+- xml更万能
+- 注解，不是自己的类使用不了。
+- 最佳实践：xml来管理bean，注解只负责完成属性的注入。

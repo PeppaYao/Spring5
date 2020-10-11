@@ -3,14 +3,14 @@ package com.bytedance.pojo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import javax.annotation.Resource;
+
 public class Person {
 
     private String name;
-    @Autowired
-    @Qualifier(value = "dog111")
+    @Resource(name = "dog111")
     private Dog dog;
-    @Autowired
-    @Qualifier(value = "cat111")
+    @Resource(name = "cat222")
     private Cat cat;
 
     public String getName() {
