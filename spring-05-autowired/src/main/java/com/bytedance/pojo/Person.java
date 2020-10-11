@@ -1,8 +1,16 @@
 package com.bytedance.pojo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class Person {
+
     private String name;
+    @Autowired
+    @Qualifier(value = "dog111")
     private Dog dog;
+    @Autowired
+    @Qualifier(value = "cat111")
     private Cat cat;
 
     public String getName() {

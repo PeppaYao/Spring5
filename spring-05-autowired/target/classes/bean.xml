@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="cat" class="com.bytedance.pojo.Cat"></bean>
-    <bean id="dog" class="com.bytedance.pojo.Dog"></bean>
-<!--    1.byname不会在容器上下文查找，和自己对象set方法后面的值对应的bean_id-->
-<!--    1.bytype不会在容器上下文查找，和自己对象属性类型相同的bean-->
-    <bean id="person" class="com.bytedance.pojo.Person" autowire="byName">
-        <property name="name" value="姚军"></property>
-    </bean>
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+<!--    开启注解的支持-->
+    <context:annotation-config/>
+
+    <bean id="cat111" class="com.bytedance.pojo.Cat"></bean>
+    <bean id="cat222" class="com.bytedance.pojo.Cat"></bean>
+    <bean id="dog111" class="com.bytedance.pojo.Dog"></bean>
+    <bean id="dog222" class="com.bytedance.pojo.Dog"></bean>
+    <bean id="person" class="com.bytedance.pojo.Person"></bean>
 </beans>

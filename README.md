@@ -64,3 +64,16 @@ jdk1.5支持注解，spring2.5支持注解。
 使用注解
 - 导入约束。`xmlns:context="http://www.springframework.org/schema/context"`
 - 配置注解的支持。`<context:annotation-config/>`
+@AutoWired
+既可以在属性上使用，也可以在set方法上使用。
+使用AutoWired可以不用编写set方法，前提是这个自动装配的属性在IOC容器中存在，且符合名字byname
+@Nullable标记这个字段可以为Null
+如果显示定义了AutoWired的required属性为false，说明这个对象可以为Null，否则不允许为空。
+```java
+@AutoWired(required=false)
+```
+@AutoWired无法自动装配时，可以使用@Qualifier(value="dog222")指定唯一的bean对象注入。
+```java
+@Autowired
+@Qualifier(value = "cat111")
+```
