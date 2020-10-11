@@ -2,8 +2,9 @@ package com.bytedance.pojo;
 
 public class User {
     private String name;
-    public User(){
-        System.out.println("默认无参构造方法");
+    public User(String name){
+        this.name = name;
+        System.out.println("有参构造方法");
     }
 
     public String getName() {
