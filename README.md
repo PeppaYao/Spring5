@@ -98,3 +98,13 @@ jdk1.5支持注解，spring2.5支持注解。
 - xml更万能
 - 注解，不是自己的类使用不了。
 - 最佳实践：xml来管理bean，注解只负责完成属性的注入。
+### 使用Java的方式配置spring
+完全不使用spring的xml配置，全部交给Java来做。
+@Configuration：这是一个配置类，和bean.xml作用相同
+@ComponentScan("com.bytedance.pojo")：扫描包
+@Import(MyConfig2.class)：导入其他配置类
+@Bean：注册一个bean，就相当于xml中的bean标签，这个方法的名字，就相当于bean标签中的id，这个方法的返回值，就相当于bean标签中的class属性
+### 代理模式
+- 静态代理
+- 动态代理
+
