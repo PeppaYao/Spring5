@@ -18,6 +18,8 @@
         <module>spring-07-config</module>
         <module>spring-08-proxy</module>
         <module>spring-10-mybatis</module>
+        <module>spring-21-ioc</module>
+        <module>spring-22-reflection</module>
     </modules>
 
     <dependencies>
